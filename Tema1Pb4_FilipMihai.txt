@@ -1,0 +1,34 @@
+%Se va genera un semnal cu rezolutie temporara de 2ms, 20ms
+%200ms pentru un semnal continuu de tipul:
+
+%Sinusoidal redresat mono-alternanta
+%T=3s, A=0.8
+t = 0:0.002:6; %0.002 = 2ms = rezolutia temporala
+figure(1)
+hold on     
+s=0.8*sin(2*pi*t*1/3); 
+s(s<0) = 0;  %Monoredresare
+plot(t, s, '-r.')
+title('Sinus redresat mono-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')
+
+t2=0:0.02:6;  %0.02 = 20ms = rezolutia temporala
+figure(2)
+hold on
+s2=0.8*sin(2*pi*t2*1/3); 
+s2(s2<0) = 0;
+plot(t2, s2, '-g.')
+title('Sinus redresat mono-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')
+
+t3=0:0.2:6;   %0.2 = 200ms = rezolutia temporala
+figure (3)
+hold on
+s3=0.8*sin(2*pi*t3*1/3); 
+s3(s3<0) = 0;
+plot(t3, s3, '-b.')
+title('Sinus redresat mono-alternanta')
+xlabel('Timp [s]')
+ylabel('A [V]')

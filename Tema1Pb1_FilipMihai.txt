@@ -1,0 +1,20 @@
+%Se va genera un semnal cu rezolutie temporara de 2ms, 20ms
+%200ms pentru un semnal continuu de tipul:
+%semnal dreptunghiular
+%n=25%, T=2s, A+=0.5, A-=-1
+t=0:0.002:4;  %0.002 = 2ms = rezolutia temporala
+f=0.5;
+    
+s=0.75*square(t*2*pi*f, 25) - 0.25;
+
+    t1=0:0.02:4;  %0.02 = 20ms = rezolutia temporala
+    s1=0.75*square(t1*2*pi*f, 25) - 0.25;
+    
+    t2=0:0.2:4;   %0.2 = 200ms = rezolutia temporala
+    s2=0.75*square(t2*2*pi*f, 25) - 0.25;
+    
+plot(t,s,'-r.',t1,s1,'-g.',t2,s2,'-b.'),grid
+title('Semnal Dreptunghiular')
+xlabel('Timp [s]')
+ylabel('A [V]')
+
